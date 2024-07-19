@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weekly Schedule</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    </head>
+<body>
+    <div id="pdfContent">
+        <h1>Semaine <span id="weekText"></span></h1>
+        <input type="text" id="weekInput">
+        <h2>Groupe de: <span id="groupText"></span></h2>
+        <input type="text" id="groupInput">
+        <br><br>
+        <table id="schedule">
+        <thead>
+            <tr>
+                <th>Heure</th>
+                <th>Lundi</th>
+                <th>Mardi</th>
+                <th>Mercredi</th>
+                <th>Jeudi</th>
+                <th>Vendredi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8:00 - 9:00</td>
+                <td>Accueil du matin</td>
+                <td>Accueil du matin</td>
+                <td>Accueil du matin</td>
+                <td>Accueil du matin</td>
+                <td>Accueil du matin</td>
+            </tr>
+            <tr>
+                <td>9:00 - 10:15</td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput1" style="display: none;" onchange="previewImage(event, 'preview1')">
+                    <button type="button" onclick="document.getElementById('fileInput1').click()">Choose File</button>
+                    <img id="preview1" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput2" style="display: none;" onchange="previewImage(event, 'preview2')">
+                    <button type="button" onclick="document.getElementById('fileInput2').click()">Choose File</button>
+                    <img id="preview2" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput3" style="display: none;" onchange="previewImage(event, 'preview3')">
+                    <button type="button" onclick="document.getElementById('fileInput3').click()">Choose File</button>
+                    <img id="preview3" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput4" style="display: none;" onchange="previewImage(event, 'preview4')">
+                    <button type="button" onclick="document.getElementById('fileInput4').click()">Choose File</button>
+                    <img id="preview4" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput5" style="display: none;" onchange="previewImage(event, 'preview5')">
+                    <button type="button" onclick="document.getElementById('fileInput5').click()">Choose File</button>
+                    <img id="preview5" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td>10:15 - 10:30</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+            </tr>
+            <tr>
+                <td>10:30 - 12:00</td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput6" style="display: none;" onchange="previewImage(event, 'preview6')">
+                    <button type="button" onclick="document.getElementById('fileInput6').click()">Choose File</button>
+                    <img id="preview6" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput7" style="display: none;" onchange="previewImage(event, 'preview7')">
+                    <button type="button" onclick="document.getElementById('fileInput7').click()">Choose File</button>
+                    <img id="preview7" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput8" style="display: none;" onchange="previewImage(event, 'preview8')">
+                    <button type="button" onclick="document.getElementById('fileInput8').click()">Choose File</button>
+                    <img id="preview8" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput9" style="display: none;" onchange="previewImage(event, 'preview9')">
+                    <button type="button" onclick="document.getElementById('fileInput9').click()">Choose File</button>
+                    <img id="preview9" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput10" style="display: none;" onchange="previewImage(event, 'preview10')">
+                    <button type="button" onclick="document.getElementById('fileInput10').click()">Choose File</button>
+                    <img id="preview10" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td>12:00 - 12:30</td>
+                <td>Dîner</td>
+                <td>Dîner</td>
+                <td>Dîner</td>
+                <td>Dîner</td>
+                <td>Dîner</td>
+            </tr>
+            <tr>
+                <td>12:30 - 13:00</td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput11" style="display: none;" onchange="previewImage(event, 'preview11')">
+                    <button type="button" onclick="document.getElementById('fileInput11').click()">Choose File</button>
+                    <img id="preview11" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput12" style="display: none;" onchange="previewImage(event, 'preview12')">
+                    <button type="button" onclick="document.getElementById('fileInput12').click()">Choose File</button>
+                    <img id="preview12" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput13" style="display: none;" onchange="previewImage(event, 'preview13')">
+                    <button type="button" onclick="document.getElementById('fileInput13').click()">Choose File</button>
+                    <img id="preview13" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput14" style="display: none;" onchange="previewImage(event, 'preview14')">
+                    <button type="button" onclick="document.getElementById('fileInput14').click()">Choose File</button>
+                    <img id="preview14" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput15" style="display: none;" onchange="previewImage(event, 'preview15')">
+                    <button type="button" onclick="document.getElementById('fileInput15').click()">Choose File</button>
+                    <img id="preview15" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td>13:00 - 14:30</td>
+                <td>PISCINE</td>
+                <td>PISCINE</td>
+                <td>PISCINE</td>
+                <td>PISCINE</td>
+                <td>PISCINE</td>
+            </tr>
+            <tr>
+                <td>14:30 - 15:45</td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput16" style="display: none;" onchange="previewImage(event, 'preview16')">
+                    <button type="button" onclick="document.getElementById('fileInput16').click()">Choose File</button>
+                    <img id="preview16" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput17" style="display: none;" onchange="previewImage(event, 'preview17')">
+                    <button type="button" onclick="document.getElementById('fileInput17').click()">Choose File</button>
+                    <img id="preview17" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput18" style="display: none;" onchange="previewImage(event, 'preview18')">
+                    <button type="button" onclick="document.getElementById('fileInput18').click()">Choose File</button>
+                    <img id="preview18" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput19" style="display: none;" onchange="previewImage(event, 'preview19')">
+                    <button type="button" onclick="document.getElementById('fileInput19').click()">Choose File</button>
+                    <img id="preview19" style="display: none;">
+                </td>
+                <td>
+                    <input type="text">
+                    <input type="file" accept="image/*" id="fileInput20" style="display: none;" onchange="previewImage(event, 'preview20')">
+                    <button type="button" onclick="document.getElementById('fileInput20').click()">Choose File</button>
+                    <img id="preview20" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td>15:45 - 16:00</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+                <td>Collation</td>
+            </tr>
+            <tr>
+                <td>16:00 - 18:00</td>
+                <td>Service de garde</td>
+                <td>Service de garde</td>
+                <td>Service de garde</td>
+                <td>Service de garde</td>
+                <td>Service de garde</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="downloadPdf">Download PDF</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
